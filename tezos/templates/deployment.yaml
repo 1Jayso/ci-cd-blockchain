@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tezos-live
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  selector:
+    matchLabels:
+      app: tezos-live
+  replicas: {{ .Values.replicaCount }} 
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: tezos-live
+    spec:
+      containers:
+        - name: tezos-live
+          image: {{ .Values.image.repository }}
+          imagePullPolicy: Never
+          ports:
+          - containerPort:  8732
+            name: tezos-live
+          - containerPort:  8735
+            name: tezos-json-rpc
+          volumeMounts:
+          - name: tezos-live-data
+            mountPath: /app/data
+          resources:
+            requests:
+              memory: "2048M"
+              cpu: "750m"
+            limits:
+              memory: "2560M"
+              cpu: "1000m"
+      volumes:
+        - name: tezos-live-data
+          hostPath:
+            path: /data/eth-live
+            type: Directory

@@ -1,0 +1,10 @@
+apiVersion: v1
+name: bitcoin 
+description: Install bitcoin-core node
+keywords:
+- bitcoin
+- node
+version: 1.0.0
+maintainers:
+- name: sja 
+  email: adodey1@yahoo.com

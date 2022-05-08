@@ -1,0 +1,41 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: tezos-live-svc
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  selector:
+    app: eth-live
+  ports:
+    - protocol: TCP
+      port: 8732
+      targetPort: 8732
+      name: tezos-live-net
+    - protocol: TCP
+      port: 30009
+      targetPort: 8545
+      name: tezos-live-jsonrpc
+
+
+
+
+
+
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: stickynotes-service
+#   namespace: {{ .Values.namespace.name }} 
+# spec:
+#   selector:
+#     app: stickynotes-container
+#   ports:
+#   - protocol: TCP
+#     port: 8000
+#     targetPort: 8000
+#   type: LoadBalancer
+
+---

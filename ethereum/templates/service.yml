@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eth-live-svc
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  selector:
+    app: eth-live
+  ports:
+    - protocol: TCP
+      port: 30303
+      targetPort: 30303
+      name: eth-live-net
+    - protocol: TCP
+      port: 30005
+      targetPort: 8545
+      name: eth-live-jsonrpc
+
+
+
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: stickynotes-service
+#   namespace: {{ .Values.namespace.name }} 
+# spec:
+#   selector:
+#     app: stickynotes-container
+#   ports:
+#   - protocol: TCP
+#     port: 8000
+#     targetPort: 8000
+#   type: LoadBalancer
+
+
+# ---

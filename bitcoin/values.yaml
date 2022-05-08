@@ -1,0 +1,8 @@
+namespace:
+  name: btc-sandbox
+ 
+image:
+  repository: 1joe/bitcoin
+  tag: v1.0.0
+
+replicaCount: 3

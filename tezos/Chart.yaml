@@ -1,0 +1,11 @@
+apiVersion: v1
+name: tezos
+description: Install Tezos blockchain node
+keywords:
+- bitcoin
+- node
+- tezos
+version: 1.0.0
+maintainers:
+- name: sja 
+  email: adodey1@yahoo.com

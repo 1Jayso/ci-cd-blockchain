@@ -1,0 +1,8 @@
+namespace:
+  name: eth-sandbox
+ 
+image:
+  repository: 1joe/ethereum
+  tag: v1.0.0
+
+replicaCount: 3

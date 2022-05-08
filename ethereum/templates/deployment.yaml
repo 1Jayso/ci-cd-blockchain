@@ -1,0 +1,152 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eth-live
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  selector:
+    matchLabels:
+      app: eth-live
+  replicas: {{ .Values.replicaCount }} 
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: eth-live
+    spec:
+      containers:
+        - name: eth-live
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: Never
+          ports:
+          - containerPort: 30303
+            name: eth-live
+          - containerPort: 8545
+            name: eth-json-rpc
+          volumeMounts:
+          - name: eth-live-data
+            mountPath: /app/data
+          resources:
+            requests:
+              memory: "2048M"
+              cpu: "750m"
+            limits:
+              memory: "2560M"
+              cpu: "1000m"
+      volumes:
+        - name: eth-live-data
+          hostPath:
+            path: /data/eth-live
+            type: Directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ---
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: stickynotes-deployment
+#   labels:
+#     app: stickynotes
+#   namespace: {{ .Values.namespace.name }} 
+# spec:
+#   replicas: {{ .Values.replicaCount }} 
+#   selector:
+#     matchLabels:
+#       app: stickynotes-container
+#   strategy:
+#     rollingUpdate:
+#       maxSurge: 25%
+#       maxUnavailable: 25%
+#     type: RollingUpdate 
+#   template:
+#     metadata:
+#       labels:
+#         app: stickynotes-container
+#     spec:
+#       containers:
+#         - name: stickynotes-container
+#           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+#           imagePullPolicy: IfNotPresent 
+#           resources:
+#               requests:
+#                 cpu: 50m
+#                 memory: 256Mi
+#           ports:
+#             - containerPort: 8000
+#           env:
+#             - name: POSTGRES_USER
+#               value: postgres
+#             - name: POSTGRES_PASSWORD
+#               value: postgres
+
+#             - name: POSTGRES_DB
+#               value: stickynotesDB
+
+#             - name: POSTGRES_HOST
+#               value: 10.244.0.85
+              
+           
+              
+    
+  
+  
+  
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: stickynotes-deployment
+#   labels:
+#     app: stickynotes
+#   namespace: {{ .Values.namespace.name }} 
+# spec:
+#   replicas: {{ .Values.replicaCount }} 
+#   selector:
+#     matchLabels:
+#       app: stickynotes-container
+#   strategy:
+#     rollingUpdate:
+#       maxSurge: 25%
+#       maxUnavailable: 25%
+#     type: RollingUpdate 
+#   template:
+#     metadata:
+#       labels:
+#         app: stickynotes-container
+#     spec:
+#       containers:
+#         - name: stickynotes-container
+#           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+#           imagePullPolicy: IfNotPresent 
+#           resources:
+#               requests:
+#                 cpu: 50m
+#                 memory: 256Mi
+#           ports:
+#             - containerPort: 8000
+#           env:
+#             - name: POSTGRES_USER
+#               value: postgres
+#             - name: POSTGRES_PASSWORD
+#               value: postgres
+#             - name: POSTGRES_HOST
+#               value: postgres 
+#             - name: PGDATA
+#               value: /data/pgdata

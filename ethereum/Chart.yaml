@@ -1,0 +1,11 @@
+apiVersion: v1
+name: bitcoin 
+description: Install ethereum blockchain node
+keywords:
+- ethereum
+- node
+- blockchain 
+version: 1.0.0
+maintainers:
+- name: sja 
+  email: adodey1@yahoo.com
