@@ -39,7 +39,10 @@ spec:
       spec:
         accessModes: [ "ReadWriteOnce" ]
         storageClassName: bitcoin-disk
-        
+        resources:
+          requests:
+            storage: 20Gi
+
 
 
 
