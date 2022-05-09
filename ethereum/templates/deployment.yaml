@@ -30,10 +30,7 @@ spec:
           resources:
             requests:
               memory: "2048M"
-              cpu: "750m"
-            limits:
-              memory: "2560M"
-              cpu: "1000m"
+              cpu: "500m"
       volumes:
         - name: eth-live-data
           hostPath:
