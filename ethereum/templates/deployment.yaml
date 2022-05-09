@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: eth-live
   namespace: {{ .Values.namespace.name }} 
@@ -8,8 +8,6 @@ spec:
     matchLabels:
       app: eth-live
   replicas: {{ .Values.replicaCount }} 
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -18,7 +16,7 @@ spec:
       containers:
         - name: eth-live
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
           - containerPort: 30303
             name: eth-live
