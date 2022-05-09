@@ -18,7 +18,7 @@ spec:
       containers:
         - name: bitcoin
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
           - containerPort: 8333
             hostPort: 8333
