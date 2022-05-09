@@ -6,7 +6,7 @@ metadata:
   namespace: {{ .Values.namespace.name }} 
 spec:
   selector:
-    app: eth-live
+    app: tezos-live
   ports:
     - protocol: TCP
       port: 8732
