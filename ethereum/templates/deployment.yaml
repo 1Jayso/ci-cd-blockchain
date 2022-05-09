@@ -32,7 +32,7 @@ spec:
               cpu: "500m"
   volumeClaimTemplates:
     - metadata:
-        name: bitcoin
+        name: eth-live-data
       spec:
         accessModes: [ "ReadWriteOnce" ]
         storageClassName: bitcoin-disk
