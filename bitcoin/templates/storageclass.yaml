@@ -6,5 +6,5 @@ metadata:
 provisioner: kubernetes.io/gce-pd
 parameters:
   type: pd-ssd
-  zone: us-central1-a
+  zone: us-central1-c
 allowVolumeExpansion: true
