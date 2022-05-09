@@ -1,43 +1,49 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: btc-live
+  name: bitcoin
   namespace: {{ .Values.namespace.name }} 
 spec:
+  serviceName: bitcoin
   selector:
     matchLabels:
-      app: btc-live
+      app: bitcoin
   replicas: {{ .Values.replicaCount }} 
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: btc-live
+        app: bitcoin
     spec:
+      restartPolicy: Always
       containers:
-        - name: btc-live
+        - name: bitcoin
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: Never
           ports:
           - containerPort: 8333
             hostPort: 8333
             protocol: TCP
-            name: btc-live
+            name: bitcoin
           - containerPort: 8332
             name: btc-json-rpc
           volumeMounts:
-          - name: btc-live-data
-            mountPath: /bitcoin/data
+          - name: bitcoin
+            mountPath: /root/.bitcoin/
           resources:
             requests:
               memory: "1024M"
               cpu: "500m"
-      volumes:
-        - name: btc-live-data
-          hostPath:
-            path: /data/btc-live
-            type: Directory
+  volumeClaimTemplates:
+    - metadata:
+        name: bitcoin
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: bitcoin-disk
+        resources:
+          requests:
+            storage: 80Gi
 
 
 
@@ -47,9 +53,39 @@ spec:
 
 
 
-
-
-
+# btc.stateful.set.yml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: bitcoin
+spec:
+  serviceName: bitcoin
+  replicas: 1 # Scale as match as you want
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: bitcoin
+  template:
+    metadata:
+      labels:
+        app: bitcoin
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: bitcoin
+          image: <your BTC Node Image>
+          volumeMounts:
+            - name: bitcoin
+              mountPath: /root/.bitcoin
+  volumeClaimTemplates:
+    - metadata:
+        name: bitcoin
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: bitcoin-disk
+        resources:
+          requests:
+            storage: 500Gi
 
 
 

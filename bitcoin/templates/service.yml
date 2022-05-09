@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: btc-live-svc
+  name: btc-live-s
   namespace: {{ .Values.namespace.name }} 
 spec:
   selector:
-    app: btc-live
+    app: bitcoin
   ports:
     - protocol: TCP
       port: 8333
