@@ -32,10 +32,7 @@ spec:
           resources:
             requests:
               memory: "1024M"
-              cpu: "750m"
-            limits:
-              memory: "2048M"
-              cpu: "1000m"
+              cpu: "500m"
       volumes:
         - name: btc-live-data
           hostPath:
