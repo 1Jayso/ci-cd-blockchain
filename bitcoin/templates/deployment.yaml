@@ -14,7 +14,7 @@ spec:
       labels:
         app: bitcoin
     spec:
-      restartPolicy: Always
+      # restartPolicy: Always
       containers:
         - name: bitcoin
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
