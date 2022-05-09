@@ -2,7 +2,7 @@ namespace:
   name: tezos-sandbox
  
 image:
-  repository: tezos/tezos
+  repository: tezos/tezos:mainnet  
   # tag: v1.0.0
 
 replicaCount: 1
