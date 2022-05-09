@@ -4,6 +4,7 @@ metadata:
   name: eth-live
   namespace: {{ .Values.namespace.name }} 
 spec:
+  serviceName: eth-live
   selector:
     matchLabels:
       app: eth-live
