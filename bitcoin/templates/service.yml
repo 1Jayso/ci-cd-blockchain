@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: btc-live-s
+  name: bitcoin
   namespace: {{ .Values.namespace.name }} 
 spec:
   selector:
