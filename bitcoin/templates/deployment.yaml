@@ -36,7 +36,7 @@ spec:
       volumes:
         - name: btc-live-data
           hostPath:
-            path: /data/btc-live
+            path: /root/.bitcoin
             type: Directory
 
 
