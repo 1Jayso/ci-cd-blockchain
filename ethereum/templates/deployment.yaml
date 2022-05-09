@@ -31,11 +31,15 @@ spec:
             requests:
               memory: "2048M"
               cpu: "500m"
-      volumes:
-        - name: eth-live-data
-          hostPath:
-            path: /data/eth-live
-            type: Directory
+  volumeClaimTemplates:
+    - metadata:
+        name: bitcoin
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: bitcoin-disk
+        resources:
+          requests:
+            storage: 20Gi
 
 
 
