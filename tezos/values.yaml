@@ -2,7 +2,7 @@ namespace:
   name: tezos-sandbox
  
 image:
-  repository: docker-tezos:latest 
+  repository: tezos/tezos
   # tag: v1.0.0
 
 replicaCount: 1
