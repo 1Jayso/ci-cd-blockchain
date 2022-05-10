@@ -24,7 +24,7 @@ spec:
             hostPort: 8333
             protocol: TCP
             name: bitcoin
-          - containerPort: 8332
+          - containerPort: 8334
             name: btc-json-rpc
           volumeMounts:
           - name: bitcoin
