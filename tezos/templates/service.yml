@@ -14,7 +14,7 @@ spec:
       name: tezos-live-net
     - protocol: TCP
       port: 30009
-      targetPort: 8545
+      targetPort: 8735
       name: tezos-live-jsonrpc
 
 
