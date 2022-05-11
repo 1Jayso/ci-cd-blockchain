@@ -19,7 +19,7 @@ spec:
         - name: tezos-live
           image: {{ .Values.image.repository }}
           command: ["tezos-node"]
-          args: ["run", "--sandbox=src/proto_alpha/parameters/sandbox-parameters.json", "--data-dir /custom/data/dir --rpc-addr localhost:8732"]
+          args: ["run", "--sandbox=src/proto_alpha/parameters/sandbox-parameters.json"]
           imagePullPolicy: Always
           ports:
           - containerPort: 8733
@@ -28,6 +28,7 @@ spec:
             name: tezos-json-rpc
           volumeMounts:
           - name: tezos-live-data
+
             mountPath: /app/data
           resources:
             requests:
