@@ -8,7 +8,7 @@
 
 
 - You can access the argocd dashboard via this IP address 35.193.103.196 
-- The dasboard credentials are as follows username=admin password=sudo12345. This will help you visualize the cluster and health statuses of the nodes.
+- The dasboard credentials are as follows {username:"admin"}, {password:"sudo12345"}. This will help you visualize the cluster and health statuses of the nodes.
 - Below is an image of the nodes from the argocd dashboard.
 ![Nodes in ArgoCd dashboard](images/btc-eth-tezos.png)
 
