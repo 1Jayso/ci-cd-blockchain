@@ -4,7 +4,7 @@
 
 >I was able to successfully deploy the applications follwing the instructions given. 
 >I used github actions for the CI and argocd for the continous deployment. I interfaced the nodes with Kong's API gateway.
->To access the bitcoin, ethereum, tezos rpc server you would need to use this IP and each nodes endpoint respectively: ["35.184.26.103/bitcoin", "35.184.26.103/ethereum", "35.184.26.103/tezos"]
+>To access the bitcoin, ethereum, tezos rpc servers you would need to use the gateway's IP and each nodes endpoint respectively as follows: ["35.184.26.103/bitcoin", "35.184.26.103/ethereum", "35.184.26.103/tezos"]
 
 
 - You can access the argocd dashboard via this IP address 35.193.103.196 
