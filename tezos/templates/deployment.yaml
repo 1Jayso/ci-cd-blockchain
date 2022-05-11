@@ -39,7 +39,7 @@ spec:
         name: tezos-live-data
       spec:
         accessModes: [ "ReadWriteOnce" ]
-        storageClassName: ethereum-disk
+        storageClassName: tezos-disk
         resources:
           requests:
             storage: 20Gi

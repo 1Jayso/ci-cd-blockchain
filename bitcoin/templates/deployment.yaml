@@ -41,7 +41,7 @@ spec:
         storageClassName: bitcoin-disk
         resources:
           requests:
-            storage: 40Gi
+            storage: 70Gi
 
 
 
