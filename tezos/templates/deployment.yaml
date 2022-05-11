@@ -18,7 +18,7 @@ spec:
       containers:
         - name: tezos-live
           image: {{ .Values.image.repository }}
-          command: ["tezos-node"]
+          command: ["tezos-node run"]
           imagePullPolicy: Always
           ports:
           - containerPort: 30303
