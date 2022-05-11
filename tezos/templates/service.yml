@@ -9,12 +9,12 @@ spec:
     app: tezos-live
   ports:
     - protocol: TCP
-      port: 8732
-      targetPort: 8732
+      port: 8733
+      targetPort: 8733
       name: tezos-live-net
     - protocol: TCP
-      port: 30009
-      targetPort: 8735
+      port: 8732
+      targetPort: 8732
       name: tezos-live-jsonrpc
 
 
