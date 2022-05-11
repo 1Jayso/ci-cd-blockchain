@@ -14,9 +14,11 @@ spec:
       labels:
         app: tezos-live
     spec:
+      hostname: node
       containers:
         - name: tezos-live
           image: {{ .Values.image.repository }}
+          command: ["tezos-node"]
           imagePullPolicy: Always
           ports:
           - containerPort: 30303
@@ -24,7 +26,7 @@ spec:
           - containerPort: 8545
             name: tezos-json-rpc
           volumeMounts:
-          - name: tezos-live-data
+          - name: tezos-live-data:/var/run/tezos/node
             mountPath: /app/data
           resources:
             requests:
