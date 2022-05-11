@@ -26,7 +26,7 @@ spec:
           - containerPort: 8545
             name: tezos-json-rpc
           volumeMounts:
-          - name: tezos-live-data:/var/run/tezos/node
+          - name: tezos-live-data
             mountPath: /app/data
           resources:
             requests:
