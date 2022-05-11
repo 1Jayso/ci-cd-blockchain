@@ -17,8 +17,8 @@ spec:
       containers:
         - name: eth-live
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          command: ["geth --http.addr"]
-          args: ["0.0.0.0"]
+          command: ["geth"]
+          args: ["--http.addr 0.0.0.0"]
           imagePullPolicy: Always
           ports:
           - containerPort: 30303
