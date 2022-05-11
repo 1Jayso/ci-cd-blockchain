@@ -2,7 +2,7 @@
 <!-- # DigitalOcean Kubernetes Challenge  -->
 
 
-- I was able to successfully deploy the applications follwing the instructions given. 
+- I was able to successfully deploy the applications follwing the instructions given I used StatefulSet instead of deployments due to the fact that blockchains are stateful applications. 
 - I used github actions for the CI and argocd for the continous deployment. I interfaced the nodes with Kong's API gateway.
 - To access the bitcoin, ethereum, and tezos rpc servers you would need to use the gateway's IP and each nodes endpoint respectively as follows: ["35.184.26.103/bitcoin", "35.184.26.103/ethereum", "35.184.26.103/tezos"]
 
