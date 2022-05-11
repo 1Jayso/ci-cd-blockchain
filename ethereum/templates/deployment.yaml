@@ -17,6 +17,8 @@ spec:
       containers:
         - name: eth-live
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          command: [" geth --rpc --rpcaddr 0.0.0.0"]
+          # args: ["run"]
           imagePullPolicy: Always
           ports:
           - containerPort: 30303
