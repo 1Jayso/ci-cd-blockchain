@@ -15,10 +15,3 @@
 ## Links to Repos
 - https://github.com/1Jayso/bitcoin
 - https://github.com/1Jayso/go-ethereum
-
-## Challenges Encountered
-- I lacked the domain knowledge so it was a bit dounting for me trying to connect to the rpc server of the nodes after deployment.
-- I run out of time so I couldn't complete gitlab ci for tezos. Owing to this, I  had to use the official tezos image from dockerhub.
-
-## Final Remarks 
-- I believe that when given the opportunity I can work with the developers to understand the workings of a blockchain to better aid in my subsequent deployment. This was fun by the way :). I hope to hear from you soon. Thanks.
